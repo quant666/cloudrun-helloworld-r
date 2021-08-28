@@ -1,4 +1,6 @@
 # app.R
+install.packages(plumber)
+library(plumber)
 
 #' CORS allows requests made from external urls to be accepted
 #' @filter cors
