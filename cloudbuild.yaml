@@ -1,26 +1,10 @@
-# This file is used to deploy to Google Cloud Run
 steps:
-  # build the container image
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["build", "-t", "gcr.io/awesome-162303/cloudrun-hello-r", "."]
-    # push the container image to Container Registry
-  - name: "gcr.io/cloud-builders/docker"
-    args: ["push", "gcr.io/awesome-162303/cloudrun-hello-r"]
-    # Deploy container image to Cloud Run
-  - name: "gcr.io/cloud-builders/gcloud"
-    args:
-      [
-        "beta",
-        "run",
-        "deploy",
-        "cloudrun-hello-r",
-        "--image",
-        "gcr.io/awesome-162303/cloudrun-hello-r",
-        "--region",
-        "asia-northeast1",
-        "--platform",
-        "managed",
-        "--quiet",
-      ]
-images:
-  - gcr.io/awesome-162303/cloudrun-hello-r
+- name: 'gcr.io/cloud-builders/docker'
+  id: Docker Version
+  args: ["version"]
+- name: 'alpine'
+  id:  Hello Cloud Build
+  args: ["echo", "Hello Cloud Build"]
+- name: 'rocker/r-base'
+  id: Hello R
+  args: ["R", "-e", "paste0('1 + 1 = ', 1+1)"]
