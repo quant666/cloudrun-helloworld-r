@@ -6,7 +6,9 @@ require(Quandl)
 require(lubridate)
 require(googlesheets4)
 # gs4_deauth()
-gs4_auth()
+require(googledrive)
+drive_auth(path = "client_secret_734281512420-r1u6eramvot4c3lt2ksbn9qe1q5193o9.apps.googleusercontent.com.json",
+           email = "joel@quantreports.com")
 
 # install.packages("writexl")
 # library(writexl)
@@ -118,7 +120,8 @@ rbaData <- rbaData %>%
 
 print(rbaData)
 
-write_sheet(rbaData, sheet = "https://docs.google.com/spreadsheets/d/1MyO49dzslAyMilo33we-cPE1jwMVoun2Evs2K67jMXc/edit?usp=sharing")
+write_sheet(rbaData, ss = "https://docs.google.com/spreadsheets/d/1MyO49dzslAyMilo33we-cPE1jwMVoun2Evs2K67jMXc/edit?usp=sharing", 
+            sheet = "output")
 
 # write_xlsx(rbaData, "rbaData.xlsx")
 

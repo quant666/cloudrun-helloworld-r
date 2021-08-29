@@ -1,3 +1,4 @@
 GCE_DEFAULT_PROJECT_ID=watchful-ripple-320400
 GAR_CLIENT_JSON=/Users/joelbindi/Documents/GitHub/cloudrun-helloworld-r/client_secret_734281512420-r1u6eramvot4c3lt2ksbn9qe1q5193o9.apps.googleusercontent.com.json
 GCE_AUTH_FILE=/Users/joelbindi/Documents/GitHub/cloudrun-helloworld-r/googlecloudrunner-auth-key.json
+CR_REGION=us-central1
