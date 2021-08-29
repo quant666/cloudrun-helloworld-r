@@ -3,8 +3,8 @@ steps:
   id: Docker Version
   args: ["version"]
 - name: 'alpine'
-  id:  Hello Cloud Build
-  args: ["echo", "Hello Cloud Build"]
-- name: 'rocker/r-base'
+  id:  Rocker Verse Test
+  args: ["echo", "Rocker Verse Test"]
+- name: 'rocker/verse'
   id: Hello R
   args: ["R", "-e", "paste0('1 + 1 = ', 1+1)"]
